@@ -63,8 +63,10 @@ function PhoneSignInComponent({ setShowPhoneSignIn }) {
         const mpData = {
           pollURL: mp.pollURL,
           pollingStation: mp.pollingStation,
+          primaryPollUrl: mp.primaryPollUrl,
         };
         localStorage.setItem("poll", mpData.pollURL);
+        localStorage.setItem("primary_poll", mpData.primaryPollUrl);
         localStorage.setItem("pollstation", mpData.pollingStation);
 
         console.log(mp.pollURL);
@@ -133,7 +135,7 @@ function PhoneSignInComponent({ setShowPhoneSignIn }) {
       <div id="recaptcha-container"></div>
       <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
         <h1 className="text-center leading-normal text-black font-medium text-3xl mb-6">
-          EBC Votes Capturing
+          EBC Votes Capturing - Main Elections
         </h1>
         {showOTP ? (
           <>
